@@ -30,11 +30,21 @@ li {
   font-weight: bold;
   background: #2f3c7e;
   color: #fbeaeb;
+  margin: 10px 0px;
 }
+
+.cartItem p,
+article {
+  display: table-cell;
+  padding: 10px;
+  vertical-align: middle;
+}
+
 .cart-actions {
   color: white;
   font-size: 20px;
   width: 50px;
   border: none;
   background: rgb(10, 7, 24);
+  margin: 0px;
 }

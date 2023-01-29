@@ -1,5 +1,8 @@
 import React from "react";
 import Product from "./Product";
+import CartItems from "./CartItems";
+import { useSelector } from "react-redux";
+
 const DUMMY_PRODUCTS = [
   {
     id: 1,
@@ -37,7 +40,10 @@ const DUMMY_PRODUCTS = [
     price: 25,
   },
 ];
+
 const Products = () => {
+  const showCart = useSelector((state) => state.cart.showCart);
+
   return (
     <div>
       <ul className="products-container">
@@ -52,6 +58,7 @@ const Products = () => {
           </li>
         ))}
       </ul>
+      {showCart && <CartItems />}
     </div>
   );
 };

@@ -2,16 +2,26 @@ import React from "react";
 
 import "./Auth.css";
 
+import { useDispatch } from "react-redux";
+import { authActions } from "../store/auth-slice";
+
 const Auth = () => {
+  const dispatch = useDispatch();
+
+  const login = (e) => {
+    e.preventDefault();
+    dispatch(authActions.login());
+  };
+
   return (
     <div className="container">
       <h1>Login</h1>{" "}
       <form>
-        <label htmlFor="id">Id</label>
+        {/* <label htmlFor="id">Id</label>
         <input type="text" name="id" id="id" />
         <label htmlFor="password">Password</label>
-        <input type="password" name="password" id="password" />
-        <button className="login-btn" type="submit">
+        <input type="password" name="password" id="password" /> */}
+        <button className="login-btn"  onClick={login}>
           Login
         </button>
       </form>
